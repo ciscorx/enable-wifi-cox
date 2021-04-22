@@ -44,12 +44,12 @@ int main(int argc, char *argv[]) {
   if (argc == 2 && *argv[1] != 0 && (argv[1][0] == '-' || argv[1][0] == 'h') ) {
       printf("\n");
       printf("  Usage:\n");
-      printf("  write_a_box <filename> <x> <y> <w> <h>\n");
+      printf("  draw_a_rectangle_in_a_ppm.o <filename> <x> <y> <w> <h>\n");
       printf("     This program inserts the outline of a rectangle of given dimensions hxw, where the upper left corner is positioned at location x,y in a given .ppm file.\n");
       exit(1);
   }
   if (argc !=6) {
-      printf("%s requires 5 arguments, not %d: the file name of the ppm image, the location in the file x y where the upper left corner of the rectangle will lie, the dimensions of the rectangle w l\n ", argv[0],argc);
+      printf("This program requires 5 arguments: the file name of the ppm image, the location in the file x y where the upper left corner of the rectangle will lie, the dimensions of the rectangle w l\n ");
       exit(1);
   }
   if (!isPositiveNumber(argv[2]) || !isPositiveNumber(argv[3]) || !isPositiveNumber(argv[4]) || !isPositiveNumber(argv[5])) {

@@ -49,12 +49,12 @@ int main(int argc, char *argv[]) {
   if (argc == 2 && *argv[1] != NULL && (argv[1][0] == '-' || argv[1][0] == 'h') ) {
       printf("\n");
       printf("  Usage:\n");
-      printf("  draw_a_circle_in_a_pm_file.o <filename> <x> <y> <r>\n");
+      printf("  draw_a_circle_in_a_ppm_file.o <filename> <x> <y> <r>\n");
       printf("     This program inserts the outline of a circle of given radius r to a given location x,y in a given .ppm file.\n");
       exit(1);
   }
   if (argc !=5) {
-      printf("%s requires 4 arguments, not %d: the file name of the ppm image, the location in the file x y the dimensions of the box l w\n ", argv[0],argc);
+      printf("This program requires 4 arguments: the file name of the ppm image, the location in the file x y the dimensions of the box l w\n ");
       exit(1);
   }
   if (!isPositiveNumber(argv[2]) || !isPositiveNumber(argv[3]) || !isPositiveNumber(argv[4]) ) {
