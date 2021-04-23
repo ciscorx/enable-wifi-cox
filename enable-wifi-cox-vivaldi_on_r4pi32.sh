@@ -172,9 +172,11 @@ if [ $output_screenshots = 1 ]; then
 echo $step - $md5; step=$(($step + 1))
 fi
 
-if [ $md5 = "" ]; then
+if [ $md5 = "97d60a96ff2ada1aa915b0f574c1714e" ]; then
     # login/password are empty with no focus on either
-    echo Incorrect username error from $addr
+
+    DISPLAY=:99 xte 'mousemove 495 205' 'mouseclick 1'
+    echo Incorrect username error from $addr, clicked ok to that and exited script
 fi
 
 #debug
@@ -187,8 +189,23 @@ fi
 if [ $md5 = "15ab2216947d6533c99a844f2a7f0adc" ]; then
     # incorrect password for admin
     DISPLAY=:99 xte 'mousemove 700 165' 'mouseclick 1'
-    echo Incorrect password for admin from $addr, clicked ok to that
+    echo Incorrect password for admin from $addr, clicked ok to that and exited script
+    exit
 fi
+#debug
+# check again for incorrect password for admin
+md5=$(get_md5 473 140 200 20)
+if [ $output_screenshots = 1 ]; then
+echo $step - $md5; step=$(($step + 1))
+fi
+
+if [ $md5 = "13df0065befedeb139668c4f3c025f07" ]; then
+    # incorrect password for admin
+    DISPLAY=:99 xte 'mousemove 495 205' 'mouseclick 1'
+    echo Incorrect password for admin from $addr, clicked ok to that and exited script
+    exit
+fi
+
 
 #debug
 # check to see if login/password are empty and focus is on login textbox
