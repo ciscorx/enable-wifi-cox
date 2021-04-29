@@ -81,7 +81,7 @@ mkdir -p /tmp/temp-disk-cache-dir/
 Xvfb :99 -fbdir /tmp &
 sleep 1 
 
-DISPLAY=:99 $vivaldi --user-data-dir=/tmp/temp-disk-cache-dir --disk-cache-dir=/tmp/temp-disk-cache-dir --disk-cache-size=104857600 --profile-directory="Profile 2" $addr &
+DISPLAY=:99 $wwwbrowser --user-data-dir=/tmp/temp-disk-cache-dir --disk-cache-dir=/tmp/temp-disk-cache-dir --disk-cache-size=104857600 --profile-directory="Profile 2" $addr &
 
 # up 40 left 40
 
